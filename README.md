@@ -3,7 +3,7 @@
 # HelloTools 教育盘
 
 ## ✨ 介绍
-本站Readme文件：<https://>
+本站Readme文件：<https://fastly.jsdelivr.net/gh/xiaozhu2007/error@master/README.md>
 
 下面的内容可以点击 **▶【查看详情】** 展开完整内容。
 
@@ -25,3 +25,13 @@
 - 更多：<https://您的网站.com>
 
 </details>
+
+### 💰 3. [关于盈利](https://afdian.net/@xiaozhu2021)
+
+### 📄 4. FAQ
+```
+    Q: 如何注册？
+    A: 联系邮箱后，等待我们核实您的身份后，会发送初始帐户密码给您，您可以手动修改密码。
+    Q: 为什么我看不到一些文件？
+    A: 部分重要文件被我们加密了，如果您真的需要，请联系我们。
+```
