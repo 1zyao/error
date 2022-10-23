@@ -13,7 +13,7 @@
 
 <details><summary>【查看详情】</summary>
     <p>Github：<a href="https://github.com/xiaozhu2007">https://github.com/xiaozhu2007</a></p>
-    <p>BiliBili：<a href="https://space.bilibili.com/156751467">https://space.bilibili.com/156751467</a></p>
+    <p>BiliBili：<a href="https://space.bilibili.com/538644327">https://space.bilibili.com/538644327</a></p>
     <p>博客：<a href="https://xioazhu2007.netlify.app/">https://xioazhu2007.netlify.app/</a></p>
 </details>
 
