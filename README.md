@@ -15,6 +15,9 @@
     <p>Github：<a href="https://github.com/xiaozhu2007">https://github.com/xiaozhu2007</a></p>
     <p>BiliBili：<a href="https://space.bilibili.com/538644327">https://space.bilibili.com/538644327</a></p>
     <p>博客：<a href="https://xioazhu2007.netlify.app/">https://xioazhu2007.netlify.app/</a></p>
+    <p>博客2：<a href="https://xioazhu2007.netlify.app/">https://xioazhu2007.netlify.app/</a></p>
+    <p>Keybase：<a href="https://keybase.io/xiaozhu2007">https://keybase.io/xiaozhu2007</a></p>
+    <p>Stellar：<a href="#">xiaozhu2007*keybase.io</a></p>
 </details>
 
 ### 🏷️ 2. 其他站点
