@@ -1,68 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>恶意网址拦截</title>
+		
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+			.main {
+				width: 586px;
+				height: 316px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -293px;
+				/* IE6 IE7 */
+				*margin-left:-285px;
+				margin-top: -158px;
+				/* background: url(/?hrres=04796a52&0) no-repeat; */
+				background: url(/?hrres=04796a52&0) no-repeat;
+				font-family: '微软雅黑',"Microsoft YaHei"
+			}
+			.top {
+				width: 100%;
+				height: 122px;
+				color: #ffffff;
+				font-size: 15px;
+			}
+			.title {
+				height: 43px;
+				margin-left: 40px;
+				line-height: 43px;
+				/* IE8 */
+				line-height:40px\9;
+			}
+			.tipCon {
+				height: 82px;
+				line-height: 62px;
+				margin-left: 107px;
+			}
+			.tipCon .page_alert {
+				float: left;
+				width: 310px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				-icab-text-overflow: ellipsis;
+				-khtml-text-overflow: ellipsis;
+				-moz-text-overflow: ellipsis;
+				-webkit-text-overflow: ellipsis;
+			}
+			.tipCon a {
+				float: right;
+				margin-right: 20px;
+				font-size: 12px;
+				color: #fdf1ef;
+			}
+			.tipCon a:hover {
+				color: #ffb6aa
+			}
+			.tipCon a:active {
+				color: #fdf1ef
+			}
+			.middle {
+				padding: 20px 30px 40px 30px;
+				/* IE6 */
+				_padding:17px 30px 40px 30px;
+			}
+			.middle p {
+				height: 26px;
+				line-height: 26px;
+				font-size: 12px;
+				color: #7f7f7f;
+			}
+			.middle p span{
+				font-size: 12px;
+			}
+			.bottom {
+				height: 49px;
+				line-height: 49px;
+				text-align: right;
+			}
+			.bottom a {
+				color: #e12f00;
+				font-size: 12px;
+				margin-right: 20px;
+			}
+			.bottom a:hover {
+				color: #e47659;
+			}
+			.bottom a:active {
+				color: #e12f00;
+			}
+			.overflow_ellipsis{
+				width: 526px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				-icab-text-overflow: ellipsis;
+				-khtml-text-overflow: ellipsis;
+				-moz-text-overflow: ellipsis;
+				-webkit-text-overflow: ellipsis;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="top">
+				<p class="title" id="title_p">恶意网址拦截</p>
+				<div class="tipCon">
+					<div id="page_alert" class="page_alert">该网站存在风险，已拦截！</div>
+					<a id="page_bugreport" href="https://www.bilibili.com/video/BV1uT4y1P7CX" target="_blank">误报申诉</a>
+				</div>
+			</div>
+			<div class="middle">
+				<p class="overflow_ellipsis"><span id="page_url_info">网址信息</span>：<span id="blocked_url" title="here">/</span></p>
+				<p class="overflow_ellipsis"><span id="page_threat_type" data-type="phising">风险类型</span>：<span id="page_url_type">木马、盗号</span></p>
+				<p class="overflow_ellipsis"><span id="page_threat_desc">风险描述</span>：<span id="blocked_desc" title="木马病毒会被植入您的电脑，以便外部操纵者控制电脑或者盗取信息。">木马病毒会被植入您的电脑，以便外部操纵者控制电脑或者盗取信息。</span></p>
+			</div>
+			<div class="bottom">
+				<a id="page_continue" href="javascript:void(0);" onclick="allow_access()">忽略警示，仍然访问</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var i8nJson = {
+				"zh-CN": {
+					// page content
+					"url_page_title":"恶意网址拦截",
+					"url_page_alert":"该网站存在风险，已拦截！",
+					"url_page_bugreport":"误报申诉",
+					"url_page_url_info":"网址信息",
+					"url_page_threat_type":"风险类型",
+					"url_page_threat_desc":"风险描述",
+					"url_page_continue":"忽略警示，仍然访问",
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
-    <title>XMRig API test</title>
-  </head>
-  <body>
-    <div class="container">
-      <form style="margin-top: 12px">
-        <div class="form-group">
-          <label for="address">API address and endpoint</label>
-          <input type="text" class="form-control" id="address" required placeholder="http://127.0.0.1:<port>/2/summary">
-        </div>
-        <div class="form-group">
-          <label for="token">Access Token</label>
-          <input type="password" class="form-control" id="token" placeholder="Optional">
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">Get API data</button>
-      </form>
+					// spy
+					"spy": "木马、盗号",
+					"url_spy_page_text": "木马病毒会被植入您的电脑，以便外部操纵者控制电脑或者盗取信息。",
 
-      <pre id="result" style="margin-top: 12px; border: 1px solid rgba(0,0,0,.15); padding: 12px"></pre>
-    </div>
+					// phising
+					"phising": "钓鱼、仿冒",
+					"url_phising_page_text": "钓鱼网站会伪装、仿冒正常网站，骗取您的银行账号、支付密码等重要信息，建议您关闭该页面。",
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+					// fraud
+					"fraud": "虚假、欺诈",
+					"url_fraud_page_text": "虚假商品网站会展示假冒商品信息，欺骗您购买假冒伪劣产品，建议您关闭页面。",
 
-    <script>
-        $(function() {
-            $('#address').val(localStorage.getItem('address'));
-            $('#token').val(localStorage.getItem('token'));
+					// rogue
+					"rogue": "流氓软件",
+					"url_rogue_page_text": "流氓软件通过诱导、欺骗、恐吓等手段胁迫用户，或通过篡改、劫持等手段操纵用户数据流量，以达到非法获利的目的。"
+				},
+				"zh-TW": {
+					// page content
+					"url_page_title":"惡意網址攔截",
+					"url_page_alert":"該網站存在風險，已攔截！",
+					"url_page_bugreport":"誤報申訴",
+					"url_page_url_info":"網址信息",
+					"url_page_threat_type":"風險類型",
+					"url_page_threat_desc":"風險描述",
+					"url_page_continue":"忽略警示，仍然訪問",
 
-            $('#submit').on('click', function(event) {
-                var address = $('#address').val();
-                if (!address) {
-                    return;
-                }
+					// spy
+					"spy": "木馬、盜號",
+					"url_spy_page_text": "木馬病毒會被植入您的電腦，以便外部操縱者控制電腦或者盜取信息",
 
-                event.preventDefault();
-                getData(address, $('#token').val());
-            });
+					// phising
+					"phising": "釣魚、仿冒",
+					"url_phising_page_text": "釣魚網站會偽裝、仿冒正常網站，騙取您的銀行賬號、支付密碼等重要信息，建議您關閉該頁面。",
 
+					// fraud
+					"fraud": "虛假、欺詐",
+					"url_fraud_page_text": "虛假商品網站會展示假冒商品信息，欺騙您購買假冒偽劣產品，建議您關閉頁面。",
 
-            function getData(address, token) {
-                var headers = {};
-                if (token) {
-                    headers.Authorization = 'Bearer ' + token
-                }
+					// rogue
+					"rogue": "流氓軟體",
+					"url_rogue_page_text": "流氓軟體通過誘導、欺騙、恐嚇等手段脅迫用戶，或通過篡改、劫持等手段操縱用戶數據流量，以達到非法獲利的目的。"
+				},
+				"en": {
+					// page content
+					"url_page_title":"Huorong Malicious Website Detection",
+					"url_page_alert":"Risks detected. Access to this website is blocked!",
+					"url_page_bugreport":"Report a false positive",
+					"url_page_url_info":"Website",
+					"url_page_threat_type":"Type",
+					"url_page_threat_desc":"Description",
+					"url_page_continue":"Ignore warning and proceed",
 
-                $.ajax({
-                    method: 'get',
-                    url: address,
-                    headers: headers
-                })
-                  .done(function(data, textStatus, jqXHR) {
-                      $('#result').text(jqXHR.responseText);
-                      localStorage.setItem('address', address);
-                      localStorage.setItem('token',   token);
-                  })
-                  .fail(function(jqXHR, textStatus) {
-                      $('#result').text('Failed to get data (' + jqXHR.status + ')');
-                  });
-            }
-        });
-    </script>
-  </body>
-</html>
+					// spy
+					"spy": "Trojan, spyware",
+					"url_spy_page_text": "Malicious code may be implanted on your computer so that hackers may control your computer or steal your information. Closing the page is recommended.",
+
+					// phising
+					"phising": "Phishing, imitating",
+					"url_phising_page_text": "Phishing websites will pretend to be a normal website, defrauding your bank account, payment password and other important information. Closing the page is recommended.",
+
+					// fraud
+					"fraud": "False, fraud",
+					"url_fraud_page_text": "False websites will display fake product information, deceiving you to buy fake and forged products. Closing the page is recommended.",
+
+					// rogue
+					"rogue": "Rogue software",
+					"url_rogue_page_text": "Intimidate users by means of inducement, deception, threatening, etc., or manipulate network traffic through tampering, hijacking, etc., in order to achieve illegal profit."
+				}
+			}
+			// 根据浏览器设置文案 -------------------------------------------------------
+			var languageArr = ['zh-CN', 'en', 'zh-TW'];
+			var threatTypeArr = ['spy', 'phising', 'fraud', 'rogue'];
+			var languageName = (navigator.userLanguage || navigator.language).toLowerCase();
+			if('zh-tw' == languageName){
+				languageName = 'zh-TW';
+			}else{
+				languageName = 'zh' == languageName.substr(0, 2) ? 'zh-CN' : 'en';
+			}
+			// 前端判断触发类型
+			var threat_type = '';
+			var threat_msg = g("page_url_type").innerHTML;
+			for(var i = 0, len = languageArr.length; i < len; i++){
+				if(!!threat_type){
+					break;
+				}
+				for(var j = 0,typeLen = threatTypeArr.length; j < typeLen; j++){
+					if(threat_msg == i8nJson[languageArr[i]][threatTypeArr[j]]){
+						threat_type = threatTypeArr[j];
+						break;
+					}
+				}
+			}
+			// 如果语言不同更新文案
+			if( g("title_p").innerHTML !== i8nJson[languageName].url_page_title){
+				var languageInfo = i8nJson[languageName];
+				// 设置title
+				document.title = languageInfo.url_page_title;
+				// 设置label
+				g("title_p").innerHTML = languageInfo.url_page_title;
+				g("page_alert").innerHTML = languageInfo.url_page_alert;
+				g("page_alert").setAttribute("title", languageInfo.url_page_alert);
+				g("page_bugreport").innerHTML = languageInfo.url_page_bugreport;
+				g("page_continue").innerHTML = languageInfo.url_page_continue;
+				g("page_url_info").innerHTML = languageInfo.url_page_url_info;
+				g("page_threat_type").innerHTML = languageInfo.url_page_threat_type;
+				g("page_threat_desc").innerHTML = languageInfo.url_page_threat_desc;
+				// 设置风险类型及描述
+				g("page_url_type").innerHTML = languageInfo[threat_type] || '';
+				g("blocked_desc").innerHTML = languageInfo['url_' + threat_type +'_page_text'] || '';
+			}
+
+			// 设置文案结束 -------------------------------------------------------
+			function g(id) {return document.getElementById(id);}
+			var b = g("blocked_url"),w=window,l=w.location,u=l.href,now=new Date();
+			var t = l.protocol+"//"+l.host+'/robots.txt?hrtk=04796a52&_=' + now.getMilliseconds();
+			b.setAttribute("title", u);
+			// if(u.length > 50) u = u.substr(0, 50) + "...";
+			b.innerHTML = u;
+			// 风险描述超出 50 省略号
+			var desc = g("blocked_desc"),desc_inner = desc.innerText;
+			// if(desc_inner.length > 50){
+			// 	desc.innerHTML = desc_inner.substring(0, 50) + "...";
+			// };
+			desc.setAttribute("title", desc_inner);
+
+			function allow_access() {
+				var xtr = null;
+				if(w.XMLHttpRequest) {
+					xtr = new XMLHttpRequest();
+				} else if(w.ActiveXObject) {
+					xtr = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				if(xtr != null) {
+					xtr.onreadystatechange = function() {
+						if(xtr.readyState == 4) {
+							top.location.reload(true);
+						}
+					};
+					xtr.open("GET", t, true);
+					xtr.send(null);
+				}
+			}
+		</script>
+	
+</body></html>
