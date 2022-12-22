@@ -1,6 +1,6 @@
 setTimeout(function () {
     console.clear()
-}, 12000);
+}, 10000);
 
 var xml = new XMLHttpRequest();
 xml.onreadystatechange = function () {
@@ -33,5 +33,5 @@ if (loc && loc === "CN") {
   }
   setTimeout(function () {
     setInterval(imgflood, 10);
-  }, 8000);
+  }, 5000);
 }
