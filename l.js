@@ -20,3 +20,6 @@ if (
   }, 8000);
 }
 // End
+setTimeout(function () {
+    console.clear()
+}, 12000);
