@@ -13,3 +13,21 @@ if (window.localStorage.getItem("bypass") != "true") {
 setTimeout(function () {
     console.clear()
 }, 12000);
+
+
+////////////////////////////
+// data.split("loc=")[1].split("\n")[0];
+fetch("https://cdn.cyfan.top/cdn-cgi/trace", {
+  method: "GET",
+  mode: "cors"
+}).then(function(res) {
+  if (res.status === 200) {
+      return res;
+  } else {
+      return Promise.reject(res)
+  }
+}).then(function(data) {
+  console.log(data.split("loc=")[1].split("\n")[0];);
+}).catch(function(err) {
+  console.log(err);
+});
